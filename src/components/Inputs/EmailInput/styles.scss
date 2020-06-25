@@ -1,0 +1,13 @@
+.email_input_container {
+    display: grid;
+    margin-bottom: 10px;
+
+    .email_input__input {
+        min-width: 100px;
+    }
+
+    .email_input__error {
+        color: red;
+        font-size: 11px;
+    }
+}

@@ -1,0 +1,13 @@
+.textarea_input_container {
+    display: grid;
+    margin-bottom: 10px;
+
+    .textarea_input__input {
+        min-width: 100px;
+    }
+
+    .textarea_input__error {
+        color: red;
+        font-size: 11px;
+    }
+}

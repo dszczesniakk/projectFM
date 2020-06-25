@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import Home from './components/Home';
+import Favourites from './components/Favourites';
+import Editor from './components/Editor';
+import { getComments } from './redux/actions';
 
-export default App;
+import './App.scss';
+
+const App = ({ getComments }) => {
+    useEffect(() => {
+        getComments();
+    }, [getComments]);
+
+    return (
+        <Router>
+            <div className="container">
+                <Route exact path="/" component={Home} />
+                <Route path="/favs" component={Favourites} />
+                <Route path="/create" component={Editor} />
+            </div>
+        </Router>
+    );
+};
+
+const mapDispatchToProps = dispatch => {
+    return bindActionCreators({ getComments }, dispatch);
+};
+
+export default connect(null, mapDispatchToProps)(App);

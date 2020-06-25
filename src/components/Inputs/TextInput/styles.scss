@@ -1,0 +1,13 @@
+.text_input_container {
+    display: grid;
+    margin-bottom: 10px;
+
+    .text_input__input {
+        min-width: 100px;
+    }
+
+    .text_input__error {
+        color: red;
+        font-size: 11px;
+    }
+}

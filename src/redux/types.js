@@ -1,0 +1,4 @@
+export const COMMENTS_LIST = 'COMMENTS_LIST;';
+export const CREATE_NEW_COMMENT = 'CREATE_NEW_COMMENT';
+export const ADD_TO_FAV = 'ADD_TO_FAV';
+export const DELETE_FROM_FAV = 'DELETE_FROM_FAV';
